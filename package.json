@@ -1,0 +1,34 @@
+{
+  "name": "lab-21-22-cowsay-client",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) lab 21-22 cowsay client ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loganlsr/lab-21-22-cowsay-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loganlsr/lab-21-22-cowsay-client/issues"
+  },
+  "homepage": "https://github.com/loganlsr/lab-21-22-cowsay-client#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "build": "^0.1.4",
+    "cowsay-browser": "^1.1.8",
+    "css-loader": "^0.25.0",
+    "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^3.10.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^1.16.2"
+  }
+}
