@@ -29,7 +29,7 @@ function CowsayController($log) {
 
   this.updateCow = function(input){
     $log.debug('this.updateCow()');
-    return '\n' + cowsay.say({text: input || 'gimme something to say', f: this.currentCow});
+    return '\n' + cowsay.say({text: input || 'I say things here!', f: this.currentCow});
   };
 
   this.speak = function(input){
