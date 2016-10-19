@@ -1,5 +1,11 @@
-$app-bg: #fa77af;
+@import "~font-awesome/scss/font-awesome.scss";
+
+$app-bg: #ffaa77;
 
 body {
   background-color: $app-bg;
+}
+
+app-red * {
+  border: 2px solid red;
 }

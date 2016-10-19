@@ -4,19 +4,40 @@
     <title> Cowsay Client </title>
   </head>
   <body>
-    <section ng-controller="CowsayController">
+    <nav ng-controller="NavController as navCtrl">
+      <i class="fa fa-low-vision"> </i>
+      <ul>
+        <li ng-repeat="navItem in navCtrl.routes">
+          <a ng-href="{{navItem.url}}"> {{navItem.name}} </a>
+        </li>
+      </ul>
+    </nav>
+    <section ng-controller="CowsayController as cowsayCtrl" ng-init="cowsayCtrl.currentCow = 'vader'">
       <h1> {{cowsayCtrl.title}} </h1>
-      <input type="text" ng-model="cowsayCtrl.text">
-      <button ng-click="cowsayCtrl.helloClick()"> Click Me </button>
+      <form
+        ng-submit="cowsayCtrl.speak(cowsayCtrl.text)" novalidate name="cowsayForm" ng-class="{'app-red': cowsayForm.$invalid}" >
+        <input type="text" ng-model="cowsayCtrl.text" required ng-minlength="6">
+
+        <select ng-model="cowsayCtrl.currentCow">
+          <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{cowfile}}">
+            {{cowfile}}
+          </option>
+        </select>
+
+        <button type="button" ng-click="cowsayCtrl.undo()"> Undo </button>
+        <button type ="submit"> Speak </button>
+      </form>
       <pre>
         {{cowsayCtrl.updateCow(cowsayCtrl.text)}}
       </pre>
-    </section>
 
-    <section ng-controller="CowsayController">
-      <h1> {{cowsayCtrl.title}} </h1>
-      <input type="text" ng-model="cowsayCtrl.coolbeans">
-      <p> {{cowsayCtrl.coolbeans}} </p>
+      <h3 ng-if="!cowsayCtrl.spoken"> THIS WILL BE REMOVED </h3>
+
+      <p ng-hide="cowsayCtrl.spoken"> Waiting for you to speak </p>
+
+      <pre ng-show="cowsayCtrl.spoken">
+        {{cowsayCtrl.spoken}}
+      </pre>
     </section>
   </body>
 </html>
