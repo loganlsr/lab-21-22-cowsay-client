@@ -24,7 +24,6 @@ function CowsayController($log) {
   cowsay.list((err, cowfiles) => {
     this.cowfiles = cowfiles;
     this.currentCow = this.cowfiles[0];
-    console.log('this.cowfiles', this.cowfiles);
   });
 
   this.updateCow = function(input){
